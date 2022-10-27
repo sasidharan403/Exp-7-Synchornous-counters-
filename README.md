@@ -45,27 +45,56 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 4-bit Count Down Counter
-### Procedure
-/* write all the steps invloved */
 
 
 
 ### PROGRAM 
-/*
+~~~
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: A.sasidharan
+RegisterNumber:  212221240049
+~~~
 
+### UP COUNTER:
+~~~
+module UC(input CLK,input reset,output[0:3]counter);
+reg[0:3]counter_up;
+always@(posedge CLK or posedge reset)
+begin 
+if(reset)
+counter_up<=4'd0;
+else
+counter_up<=counter_up+4'd1;
+end
+assign counter=counter_up;
+endmodule
+~~~
+### DOWN COUNTER:
+~~~
+module downcounter(input CLK,input reset,output[0:3]counter);
+reg[0:3]counter_down;
+always@(posedge CLK or posedge reset)
+begin 
+if(reset)
+counter_down<=4'd0;
+else
+counter_down<=counter_down-4'd1;
+end
+assign counter=counter_down;
+endmodule
 
+~~~
 
 
 
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
+### UP COUNTER:
 
-
+ ![image](https://user-images.githubusercontent.com/94154712/198282738-d9b3f8d7-9ab1-4980-9320-0e3c51328b3c.png)
+### DOWN COUNTER:
+![image](https://user-images.githubusercontent.com/94154712/198282865-08631cc5-1ecd-415c-9e73-4d3c35940caf.png)
 
 
 
@@ -73,16 +102,21 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS FOR COUNTER  
+### UP COUNTER:
+![image](https://user-images.githubusercontent.com/94154712/198282986-9eb8520a-eded-470a-9423-a1813710c977.png)
 
 
-
-
+### DOWN COUNTER:
+![image](https://user-images.githubusercontent.com/94154712/198283028-5e220b1d-39ac-4c3a-bd3a-aa8b15548284.png)
 
 ### TRUTH TABLE 
+### UP COUNTER:
+![image](https://user-images.githubusercontent.com/94154712/198283083-c16f3b4d-5891-474c-83de-6e8809645166.png)
 
+### DOWN COUNTER:
 
-
-
+![image](https://user-images.githubusercontent.com/94154712/198283319-ad0b5a05-e33a-4183-9e39-c6e5d606eefe.png)
 
 
 ### RESULTS 
+The program is successfully executed to create 4bit-upcounter and 4bit-downcounter, the RTL simulisation is generated and wafe form is also generated.
